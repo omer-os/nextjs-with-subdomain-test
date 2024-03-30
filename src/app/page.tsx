@@ -8,7 +8,7 @@ export default function Home() {
       <div className="flex flex-col gap-2">
         {restaurants.map((restaurant) => (
           <Link
-            href={`/restaurant/${restaurant.subdomain}`}
+            href={`/${restaurant.subdomain}`}
             key={restaurant.subdomain}
             className="flex gap-2 items-center"
           >
