@@ -16,18 +16,18 @@ export function middleware(req: NextRequest) {
   if (restaurant) {
     const destinationUrl = isLocal
       ? `http://${restaurant.subdomain}.lvh.me:3000`
-      : `https://${restaurant.subdomain}.test-hakelmenu.vercel.app`;
+      : `https://${restaurant.subdomain}.omarchatin.com`;
 
     return NextResponse.redirect(destinationUrl);
   }
 
   // If no matching restaurant is found, redirect to the /notfound page
-  const notFoundUrl = isLocal ? `http://lvh.me:3000/notfound` : `https://test-hakelmenu.vercel.app/notfound`;
+  const notFoundUrl = isLocal
+    ? `http://lvh.me:3000/notfound`
+    : `https://omarchatin.com/notfound`;
   return NextResponse.redirect(notFoundUrl);
 }
 
 export const config = {
-  matcher: [
-    "/((?!api/|_next/|_static/|_vercel|[\\w-]+\\.\\w+).*)",
-  ],
+  matcher: ["/((?!api/|_next/|_static/|_vercel|[\\w-]+\\.\\w+).*)"],
 };
